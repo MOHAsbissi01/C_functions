@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+// Function prototype
+int count_occurrences(int *table, int size, int element);
+
+int main(void) {
+    int table[] = {1, 2, 3, 2, 4, 2, 5};
+    int table_size = sizeof(table) / sizeof(int);
+    int element = 2; // The element we are searching for
+
+    int count = count_occurrences(table, table_size, element);
+    printf("The element %d occurs %d times in the table.\n", element, count);
+
+    return 0;
+}
+
+// Function definition
+int count_occurrences(int *table, int size, int element) {
+    int count = 0; // Counter for the number of occurrences
+
+    // Iterate through the table and count the number of occurrences of the element
+    for (int i = 0; i < size; i++) {
+        if (table[i] == element) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+This code will print out "The element 2 occurs 3 times in the table." The function count_occurrences takes a pointer to an array of integers (table), the size of the array (size), and the element we are searching for (element), and returns the number of occurrences of element in the array.
